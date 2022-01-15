@@ -22,8 +22,7 @@ def retrieve_transactions():
     result = json.loads(result)
     transactions = result["transactionsData"]
     return transactions
-#transactions = retrieve_transactions()
-#print(transactions[0])
+
 
 def store_data_MDB(Mdb, transactions):
     """
@@ -33,7 +32,9 @@ def store_data_MDB(Mdb, transactions):
     """
     Mdb.delete_many({})
     Mdb.insert_many(transactions)
-    
+
+
+transactions = retrieve_transactions()
+print(transactions[0])    
 Mdb = setup.Mdb  
-retrieve_transactions()
 store_data_MDB(Mdb, transactions)
