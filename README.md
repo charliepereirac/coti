@@ -1,6 +1,6 @@
 # COTI API 
 
-This objective of this project is to retrieve data from COTI's website, store it and then make it available for queries trough an API.
+The objective of this project is to retrieve data from COTI's website, store it and then make it available for queries trough an API.
 
 The project was divided in 2 main parts: the scraper and the API. 
 - For the scarper several libraries have been used, however the two most important ones where [BeautifulSoup](https://pypi.org/project/bs4/) and requests. 
@@ -21,7 +21,7 @@ Before opening those files, please open your virtual environment and run the fol
 # Install the requirements:
 pip install -r requirements.txt
 ```
-The transactions’ information was already uploaded to MongoDB and is ready to be used trough the API. However, if you want to reload the information just uncomment the last line in the scarper.py file. 
+The transactions’ information is already uploaded to MongoDB and ready to be used trough the API. However, if you want to reload the information just uncomment the last line in the scarper.py file. 
 
 To use the api please run the following in the virtual environemnt's terminal:
 ```bash
