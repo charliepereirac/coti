@@ -23,18 +23,17 @@ def retrieve_transactions():
     transactions = result["transactionsData"]
     return transactions
 
-
 def store_data_MDB(Mdb, transactions):
     """
     Inserts data into a MongoDB collection.
-    :param Msb: pymongo.collection.Collection: collection where the data must be inserted.
+    :param data: pymongo.collection.Collection: collection where the data must be inserted.
     :param transactions: JSON: JSON file to be inserted in collections.
     """
     Mdb.delete_many({})
     Mdb.insert_many(transactions)
-
-
+    print("Uploaded successfully")
+    
+# Request and upload trnasaction data to MDB
 transactions = retrieve_transactions()
-print(transactions[0])    
-Mdb = setup.Mdb  
-store_data_MDB(Mdb, transactions)
+Mdb = setup.Mdb
+#store_data_MDB(Mdb, transactions)
