@@ -16,7 +16,21 @@ The project contains 2 main files:
 -	scraper.py
 -	API.py
 
+Before opening those files, please open your virtual environment and run the following:
+```bash
+# Install the requirements:
+pip install -r requirements.txt
+```
 The transactions’ information was already uploaded to MongoDB and is ready to be used trough the API. However, if you want to reload the information just uncomment the last line in the scarper.py file. 
 
 To use the api please proceed as follows:
+```bash
+# Start the service:
+uvicorn app:app --reload
+```
+
+The API must be accessible now at http://localhost:8000 in your browser. 
+To see the API's documentation use the following command: http://localhost:8000/docs
+You will come up with this:
+![Captura de pantalla 2022-01-15 a las 14 42 52](https://user-images.githubusercontent.com/96559779/149626386-0002285e-0692-44ad-87b1-b2aa18a491c6.png)
 
