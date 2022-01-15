@@ -23,7 +23,7 @@ pip install -r requirements.txt
 ```
 The transactions’ information was already uploaded to MongoDB and is ready to be used trough the API. However, if you want to reload the information just uncomment the last line in the scarper.py file. 
 
-To use the api please proceed as follows:
+To use the api please run the following in the virtual environemnt's terminal:
 ```bash
 # Start the service:
 uvicorn app:app --reload
@@ -33,4 +33,12 @@ The API must be accessible now at http://localhost:8000 in your browser.
 To see the API's documentation use the following command: http://localhost:8000/docs
 You will come up with this:
 ![Captura de pantalla 2022-01-15 a las 14 42 52](https://user-images.githubusercontent.com/96559779/149626386-0002285e-0692-44ad-87b1-b2aa18a491c6.png)
+
+The API can run 3 consultations:
+-	By hash: It tries to emulate COTI’s function to retrieve information by inserting a known hash. To run this please use: http://localhost:8000/{hash}. Replace “hash” with the code you are interested to look for. 
+-	By date: It retrieves information from a given day. To run this use: http://localhost:8000/{day}/{month}/{year}. Please use the format “%d/%m/%Y”
+-	Between dates: Similar to the previous one but this query retrieves information  between dates (inclusive) http://localhost:8000/{day_1}/{month_1}/{year_1}/{day_2}/{month_2}/{year_2}. Please use the same date format as the previous one. 
+
+
+
 
