@@ -29,9 +29,12 @@ def store_data_MDB(Mdb, transactions):
     :param data: pymongo.collection.Collection: collection where the data must be inserted.
     :param transactions: JSON: JSON file to be inserted in collections.
     """
-    Mdb.delete_many({})
-    Mdb.insert_many(transactions)
-    print("Uploaded successfully")
+    if len(transactions) > 50000:
+        Mdb.delete_many({})
+        Mdb.insert_many(transactions)
+        print("Uploaded successfully.")
+    else:
+        print("Download failed. Please try again.")
     
 # Request and upload trnasaction data to MDB
 transactions = retrieve_transactions()
